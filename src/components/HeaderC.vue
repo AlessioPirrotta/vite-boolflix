@@ -4,8 +4,14 @@ export default{
     name:'HeaderC', data() {
         return {
             store
-        }}
-    
+        }},
+
+    methods: {
+        emitSearchEvents() {
+            this.$emit('movieSearch');
+            this.$emit('serieSearch');
+    }
+}
 }
 </script>
 
@@ -14,7 +20,7 @@ export default{
         <h1 style="color:#F0492F ;" class="ms-4">BOOLFLIX</h1>
         <div>
             <input v-model="store.searchText" style="height: 35px;" class="rounded-2  ps-2" type="text">
-            <button @click="$emit('movieSearch')"  style="width: 50px; height: 35px;" class="rounded-2 border-0 ms-3">Cerca</button>
+            <button @click="emitSearchEvents()"  style="width: 50px; height: 35px;" class="rounded-2 border-0 ms-3">Cerca</button>
         </div>
     </header>
 </template>
