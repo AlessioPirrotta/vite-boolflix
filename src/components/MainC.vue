@@ -16,7 +16,7 @@ export default{
 
 <template>
     <main>
-        <div class="mx-5">
+        <div class="mx-5 my-5">
         <div class="row">
             
             <SingleCard v-for="(item, index) in [...store.movieList, ...store.serieList]" :key="index" :propsItem="item"/>
