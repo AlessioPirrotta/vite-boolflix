@@ -10,6 +10,8 @@ export default{
         emitSearchEvents() {
             this.$emit('movieSearch');
             this.$emit('serieSearch');
+            this.$emit('trailerSearch');
+            this.$emit('actorSearch');
     }
 }
 }
@@ -19,8 +21,8 @@ export default{
     <header class="px-4 pt-3 d-flex justify-content-center align-items-center">
         <h1 style="color:#F0492F ;" class="ms-4">BOOLFLIX</h1>
         <div>
-            <input v-model="store.searchText" style="height: 35px;" class="rounded-2  ps-2" type="text">
-            <button @click="emitSearchEvents()"  style="width: 50px; height: 35px;" class="rounded-2 border-0 ms-3">Cerca</button>
+            <input @keydown.enter="emitSearchEvents()" v-model="store.searchText" style="height: 35px;" class="rounded-2  ps-2" type="text">
+            <button  @click="emitSearchEvents()" style="width: 50px; height: 35px;" class="rounded-2 border-0 ms-3">Cerca</button>
         </div>
     </header>
 </template>
